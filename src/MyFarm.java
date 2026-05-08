@@ -37,7 +37,7 @@ addLettuce();
 printPlantNames();
 addTulip();
 tomatoLocations();
-totalCarrots();
+System.out.println(totalCarrots());
 averageNumberOfPlants();
 numberOfCarrotPlots();
 numberOfEmptyPlots();
@@ -46,6 +46,8 @@ plantWithMaxNumber();
 plantWithMinNumber();
 greaterThan10();
 plantWithMaxNumberNeedsWater();
+System.out.println(isEveryPlotNotEmpty());
+
 
 
     }
@@ -68,9 +70,9 @@ plantWithMaxNumberNeedsWater();
 
     public void printRowInfo() {
         // use the printPlotInfo() method in Plot.java to print all information for each plot in the row
-        for (int x = 0; x < row.size(); x++){
-            row.get(x).printPlotInfo();
-        }
+           for(Plot p : row) {
+               p.printPlotInfo();
+           }
     }
 
     public void addLettuce() {
@@ -104,7 +106,7 @@ plantWithMaxNumberNeedsWater();
         // Note: this one needs a for loop, NOT a for each loop
     }
 
-    public void totalCarrots() {
+    public int totalCarrots() {
         // how many total carrot plants are there?
         printPlantNames();
         int i = 0;
@@ -113,7 +115,7 @@ plantWithMaxNumberNeedsWater();
                 i=i+1;
             }
         }
-        System.out.println("number of carrots: " + i);
+        return i;
 
     }
 
@@ -259,6 +261,16 @@ plantWithMaxNumberNeedsWater();
         if (tom > lett && tom > car){
             System.out.println("tomatoes need most");
         }
+    }
+
+    public boolean isEveryPlotNotEmpty(){
+        int i = 0;
+        for(Plot o: row){
+            if (o.plantName.equals("empty")){
+                i++;
+            }
+        }
+        return i == 0;
     }
 
     /***
