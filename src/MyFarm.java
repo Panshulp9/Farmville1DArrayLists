@@ -267,6 +267,8 @@ plantWithMaxNumberNeedsWater();
     public void greatestDifferenceNumberBetweenAnyPlants() {
         // of every pair of adjacent plots, which two have the greatest difference in plant numbers?
         // what is that difference?
+
+
     }
 
     public void numberOfCarrotPlotsNextToLettuce() {
